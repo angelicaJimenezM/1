@@ -1,6 +1,10 @@
+//Importamos el inicio de la pagina
+import {Home} from './View/Home'
 function App() {
   return (
-    <div>Hello World</div>
+    <div className="bg-home py-4">
+      <div className='subContainer'><Home/></div>
+    </div>
   )
 }
 

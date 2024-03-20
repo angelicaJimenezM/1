@@ -6,7 +6,13 @@ export default {
   ],
   
   theme: {
-    extend: {},
+    extend: {
+        colors:{
+          'home': '#9ED4C6',
+          'btton': '#FF45A9',
+          'title': '#271874'
+      }
+    },
   },
   plugins: [],
 }
