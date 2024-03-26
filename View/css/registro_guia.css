@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(210, 226, 249);
 }
 .imagen{
@@ -60,6 +60,6 @@ h3{
 button{
     background-color: #ADD8E6; 
     border-color: ghostwhite;
-    height: 30px;
+    height: 36px;
     margin: 10px;
 }

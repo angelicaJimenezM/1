@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(210, 226, 249);
 }
 .imagen{
@@ -31,13 +31,6 @@ body {
    display: block;
     width: 60%;
 }
-.input, .textarea{
-    margin-bottom: 0.5rem;
-    border: 1px solid;
-    padding: 0.5rem;
-    border-radius: 0.3rem;
-}
-
 .contenedor{
     position: absolute;
     left: 150px;
@@ -53,6 +46,6 @@ h3{
 button{
     background-color: #ADD8E6; 
     border-color: ghostwhite;
-    height: 30px;
+    height: 36px;
     margin: 10px;
 }
