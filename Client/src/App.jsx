@@ -10,6 +10,7 @@ import { TypeUsers } from '../src/View/TypeUsers';
 //Importamos los tipos de formularios
 import { Tourist } from './View/Tourist';
 import { Guia } from './View/Guia';
+import { Provider } from './View/Provider';
 function App() {
 
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/Iniciar-sesion/typeUser" element={<TypeUsers/>} />
         <Route path="/Iniciar-sesion/typeUser/Turista" element={<div className='h-screen bg-home py-4'><Tourist/></div>} />
         <Route path='/Iniciar-sesion/typeUser/Guia' element={<div className='h-screen bg-home py-4'><Guia/></div>}/>
+        <Route path='/Iniciar-sesion/typeUser/Proveedor' element={<div className='h-screen bg-home py-4'><Provider/></div>}/>
       </Routes>
     </BrowserRouter>
   )
