@@ -16,6 +16,12 @@
   right: 14.9rem;
   width: 40%;
 }
+.Guide{
+  position: absolute;
+  margin-top: 25rem;
+  right: 13.5rem;
+  width: 50%;
+}
 .Main{
   position: relative;
   width:22rem;

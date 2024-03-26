@@ -20,7 +20,7 @@ export default function SelectModal() {
                         </li>
                         <li  className='flex items-center mb-8 cursor-pointer'>
                             <img src={Guide} alt="No found" className='w-1/3' />
-                            <Link to="" className='pl-8 text-xl font-normal'>Guía</Link>
+                            <Link to="/Iniciar-sesion/typeUser/Guia" className='pl-8 text-xl font-normal'>Guía</Link>
                         </li>
                         <li  className='flex items-center mb-8 cursor-pointer'>
                             <img src={Mensajero} alt="No found" className='w-1/4' />

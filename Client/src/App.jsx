@@ -9,6 +9,7 @@ import { UserForm } from '../src/View/UserForm'
 import { TypeUsers } from '../src/View/TypeUsers';
 //Importamos los tipos de formularios
 import { Tourist } from './View/Tourist';
+import { Guia } from './View/Guia';
 function App() {
 
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/Iniciar-sesion" element={<div className='h-screen bg-home py-4 flex flex-col flex-wrap'><UserForm /></div>} />
         <Route path="/Iniciar-sesion/typeUser" element={<TypeUsers/>} />
         <Route path="/Iniciar-sesion/typeUser/Turista" element={<div className='h-screen bg-home py-4'><Tourist/></div>} />
+        <Route path='/Iniciar-sesion/typeUser/Guia' element={<div className='h-screen bg-home py-4'><Guia/></div>}/>
       </Routes>
     </BrowserRouter>
   )
