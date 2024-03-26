@@ -47,18 +47,20 @@ export const Guia = () => {
             className="border border-gray-400 w-full p-3 rounded-xl pl-3 mb-5 my-3 outline-none"
           />
           <div className="flex justify-evenly">
-            <label htmlFor="">sexo</label>
-            <input
-              type="text"
-              placeholder="F"
-              className="border border-gray-400 w-14 h-14 p-3 rounded-full mb-5 my-3 text-center outline-none"
-            />
-            <label htmlFor="">edad</label>
-            <input
-              type="text"
-              placeholder="20"
-              className="border border-gray-400 w-14 h-14 p-3 rounded-full mb-5 my-3 text-center outline-none"
-            />
+            <label htmlFor="" className=''>
+              <p>Edad</p>
+              <input
+                type="number"
+                placeholder='20'
+                className='border border-gray-400 w-14 h-14 p-3 rounded-full mb-5 my-3 text-center outline-none' />
+            </label>
+            <label htmlFor="" className=''>
+              <p>Sexo</p>
+              <input
+                type="text"
+                placeholder='M'
+                className='border border-gray-400 w-14 h-14 p-3 rounded-full mb-5 my-3 text-center outline-none' />
+            </label>
           </div>
           <div className="text-center">
             <Button
@@ -72,7 +74,7 @@ export const Guia = () => {
             />
           </div>
         </form>
-        <img src={Guide} alt="" className="Guide" />
+        <img src={Guide} alt="" className="Guide w-1/2" />
       </main>
     </div>
   );
