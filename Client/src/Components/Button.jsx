@@ -1,9 +1,10 @@
 import propTypes from 'prop-types'
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 export const Button = (props) => {
     const {label = 'Default', style, link = '/'} = props
     return (
-        <button style={{
+        <button 
+            style={{
             width: '14rem',
             height: '2.9rem',
             fontSize: '16px',

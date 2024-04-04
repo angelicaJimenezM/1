@@ -1,19 +1,28 @@
 import MSG from "../assets/Icons/Logo.jpg";
 import { Button } from "../Components/Button";
+//-------------------------------------
+import {Link} from 'react-router-dom'
+//-----------------------------------
+import Supplier from '../assets/Image/Provider.png'
 export const Provider = () => {
   return (
-    <div className="flex flex-col flex-wrap items-center mx-3 my-5 p-5 bg-white rounded-xl">
-      <header className=" w-full flex flex-col items-center">
-        <img src={MSG} alt="No found" className="Logo" />
-        <div className="w-full text-center p-1 pb-2">
-          <p className="text-2xl font-bold">Crea una cuenta como proveedor </p>
-          <p className="text-base font-bold text-gray-400">
-            Ingresa tu informacion
-          </p>
+    <div className="flex flex-col  items-center mx-4  my-2 p-5 bg-white xl:mx-20 rounded-xl h-auto ">
+    <header className=' w-full flex flex-col items-center xl:flex-row xl:justify-around '>
+        <Link to='/'><img src={MSG} alt="No found" className='xl:flex w-44' /></Link>
+        <div className='w-full text-center p-1 pb-2 xl:hidden'>
+            <p className='text-2xl font-bold'>Crea una cuenta como turista </p>
+            <p className='text-base font-bold text-gray-400'>Ingresa tu informacion</p>
         </div>
-      </header>
-      <main className="Main flex flex-col py-10 mb-5 px-10 rounded-xl">
-        <form action="" className="Form w-full flex flex-col overflow-y-auto ">
+    </header>
+      <main className="Main py-10 mb-5 px-10 rounded-xl xl:w-full xl:grid xl:grid-cols-2 xl:border-none">
+      <div className='hidden xl:flex w-full justify-center items-center'>
+                    <img src={Supplier} alt="" className='w-11/12 block' />
+                </div>
+        <form action="" className="Form w-full flex flex-col overflow-y-auto xl:border xl:border-black xl:max-h-none xl:px-14 xl:py-4 xl:rounded-2xl">
+        <div className='w-full text-center p-10 pb-2 hidden xl:flex xl:flex-col'>
+                        <p className='text-2xl font-bold'>Crea una cuenta como proveedor </p>
+                        <p className='text-base font-bold text-gray-400'>Ingresa tu informacion</p>
+                    </div>
           <label htmlFor="">Nombre</label>
           <input
             type="text"

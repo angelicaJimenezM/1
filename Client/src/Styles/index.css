@@ -1,33 +1,45 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities; 
+@tailwind utilities;
 * {
-    font-family: "Roboto Slab", serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
-  }
-.Form{
-  max-height: 30rem;
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
 }
-.Tourist{
+.Form {
+  max-height: 30rem;
+  scrollbar-width: thin;
+  scrollbar-color: #9ed4c6 #f5f5f5;
+}
+.Tourist {
   position: absolute;
   margin-top: 25rem;
   right: 14.9rem;
   width: 40%;
 }
-.Guide{
+.Guide {
   position: absolute;
   margin-top: 27.5rem;
   left: 13.5rem;
 }
-.Main{
+.Main {
   position: relative;
-  width:22rem;
-  border:1px solid #000;
+  width: 22rem;
+  border: 1px solid #000;
   display: flex;
 }
-.Logo{
+.Logo {
   width: 40%;
-  
+}
+.modal{
+  visibility: hidden;
+  opacity: 0;
+}
+@media screen and (min-width: 1280px) {
+  .Form {
+    height: 40rem;
+    scrollbar-width: thin;
+    scrollbar-color: #9ed4c6 #f5f5f5;
+  }
 }

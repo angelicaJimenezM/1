@@ -6,7 +6,7 @@ import Mensajero from '../assets/Icons/mensajero.png';
 import { Link } from 'react-router-dom'
 export default function SelectModal() {
     return (
-        <div className="border border-black rounded-xl shadow-gray-500 shadow-2xl bg-white">
+        <div className="border border-black rounded-xl shadow-black shadow-2xl bg-white xl:w-1/3 ">
             <header className=" flex flex-col items-center">
                 <p className="text-xl">¿Que tipo de cuenta quieres crear?</p>
                 <p className='text-secod'>Seleccione una perfil</p>
