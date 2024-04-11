@@ -1,7 +1,8 @@
 //----------------
 export const handleChangeText = (event, setValue) => {
     const inputValue = event.target.value;
-    if (/^[a-zA-Z]*$/.test(inputValue)) {
+    if (/^[a-zA-Z\s]*$/
+    .test(inputValue)) {
         setValue(inputValue)
     } else {
         alert("Escriba solo letras")

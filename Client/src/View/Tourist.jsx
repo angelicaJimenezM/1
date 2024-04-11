@@ -9,7 +9,10 @@ import { Link } from 'react-router-dom'
 //Importamos la funcion que valida las expresiones regulares 
 import { handleChangeText, handleChangenumber } from '../Utils/InputValidation'
 //------------------------------------------------------------
-import { ContentModal } from '../Components/ContentModal'
+import { createTouristRequest } from '../api/user.api.js'
+//-----------------------------------------------------------
+import { Button } from "../Components/Button";
+
 export const Tourist = () => {
     //Almacenamos el valor del input en el estado utilizando el hook useState
     const [nombre, setNombre] = useState('');
@@ -20,9 +23,28 @@ export const Tourist = () => {
     const [email, setEmail] = useState('');
     const [telefono, setTelefono] = useState('');
     const [contacto, setContacto] = useState('');
-    const [interes, setInteres] = useState('')
-    const [check,setCheck] = useState(false)
-    const handleCLick = () => setCheck(!check)
+    const [interes, setInteres] = useState('');
+    const [nivel, setNivel] = useState('')
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await createTouristRequest({
+                nombre: nombre,
+                apellido: apellido,
+                edad: edad,
+                sexo: genero,
+                interas: interes,
+                s_email: email,
+                n_telefono: telefono,
+                c_emergencia: contacto,
+                n_idiomas: idiomas,
+                idiomas: nivel
+            })
+            console.log(response)
+        } catch (error) {
+            console.error('Error al registrar usuario:', error)
+        }
+    }
     return (
         <div className="flex flex-col  items-center mx-4 my-2 p-5 bg-white xl:mx-20 rounded-xl h-auto ">
 
@@ -39,7 +61,7 @@ export const Tourist = () => {
                     <img src={TouristIMG} alt="" className=' block pr-10 rounded-full' />
                 </div>
 
-                <form action="" className='Form w-full flex flex-col overflow-y-auto xl:border xl:border-black xl:max-h-none xl:px-14 xl:py-4 xl:rounded-2xl'>
+                <form onSubmit={handleSubmit} action="" className='Form w-full flex flex-col overflow-y-auto xl:border xl:border-black xl:max-h-none xl:px-14 xl:py-4 xl:rounded-2xl'>
                     <div className='w-full text-center p-10 pb-2 hidden xl:flex xl:flex-col'>
                         <p className='text-2xl font-bold'>Crea una cuenta como turista </p>
                         <p className='text-base font-bold text-gray-400'>Ingresa tu informacion</p>
@@ -102,9 +124,20 @@ export const Tourist = () => {
                         </label>
                     </div>
                     <label htmlFor="" className=''>
+                        <p>Nivel de idioma</p>
+                        <input
+                            type="text"
+                            value={nivel}
+                            onChange={(event) => {
+                                handleChangeText(event, setNivel)
+                            }}
+                            placeholder='Ingrese su nivel de idioma'
+                            className='border border-gray-400 w-full p-3 rounded-xl pl-3 mb-5 my-3 outline-none' />
+                    </label>
+                    <label htmlFor="" className=''>
                         <p>Correo electronico</p>
                         <input
-                            type="email"
+                            type="text"
                             placeholder='Ingrese su correo'
                             value={email}
                             onChange={(event) => {
@@ -136,31 +169,28 @@ export const Tourist = () => {
                     </label>
                     <label htmlFor="" className=''>
                         <p>Intereses</p>
-                        <input
-                            type="text"
-                            placeholder='¿Tienenes algun interes?'
+                        <textarea name=""
                             value={interes}
                             onChange={(event) => {
                                 handleChangeText(event, setInteres)
                             }}
-                            className='border border-gray-400 w-full h-28 p-3 rounded-xl mb-5 my-3 text-center pb-20'
-                        />
+                            placeholder='¿Tienes algun interes?'
+                            className='TextArea border border-gray-400 w-full xl:px-3 rounded-xl pl resize-none'
+                        ></textarea>
                     </label>
                     <div className='text-center'>
-                        <button
-                            type='button'
-                            onClick={handleCLick}
-                            className='w-56 h-12 text-base bg-home border border-black rounded-xl font-bold'>
-                            Registrate
-                        </button>
+                        <Button
+                            label="Registrate"
+                            style={{
+                                background: "#9ED4C6",
+                                border: "1px solid #000",
+                                color: "#000",
+                            }}
+                        />
                     </div>
                 </form>
                 <img src={TouristIMg} alt="" className='Tourist xl:hidden' />
             </main>
-            {
-                check ? <ContentModal /> : " "
-
-            }
         </div>
     )
 }

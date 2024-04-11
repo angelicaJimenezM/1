@@ -15,5 +15,5 @@ export const createGuide = (req, res) => {
     "INSERT INTO guia(nombre,apellido,n_telefono,idiomas,n_idiomas,edad,sexo,s_email) VALUES (?,?,?,?,?,?,?,?)",
     [nombre, apellido, n_telefono, idiomas, n_idiomas, edad, sexo, s_email]
   );
-  res.send("Usuario creado")
+  res.send("Usuario creado");
 };
