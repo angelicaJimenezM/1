@@ -1,9 +1,9 @@
 import propTypes from 'prop-types'
-import {Link} from 'react-router-dom';
 export const Button = (props) => {
-    const {label = 'Default', style, link = '/'} = props
+    const {label = 'Default', style,} = props
     return (
         <button 
+            type='submit'
             style={{
             width: '14rem',
             height: '2.9rem',
@@ -14,7 +14,7 @@ export const Button = (props) => {
             fontWeight: 'bold',
             ...style
         }}>
-            <Link to = {link}>{label}</Link>
+            {label}
         </button>
     )
 }
