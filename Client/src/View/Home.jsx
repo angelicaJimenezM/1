@@ -16,16 +16,16 @@ import { Link } from 'react-router-dom'
 //Cuerpo del Componente Home
 export const Home = () => {
     return (
+        <div className='h-screen bg-home py-4'>
         <div className='flex flex-col flex-wrap mx-3 bg-white rounded-xl py-4 mx-4 my-2 p-5'>
             <header className='w-full flex justify-evenly items-center '>
                 <Link to="/Iniciar-sesion" className='border-2 border-btton p-2 rounded-xl text-xs mx-2 font-bold text-tti hover:bg-btton hover:text-white xl:hidden'>Iniciar Sesión</Link>
                 <img src={MSG} alt="Not Found" className='w-44 mr-14 xl:mx-10' />
                 <Icons icon={faBars} css='text-3xl mx-2 xl:hidden' />
-                {/* Aqui Colocar los link */}
                 <div className='w-full hidden xl:flex xl:justify-around p-10'>
-                    <button className='font-bold text-lg'>¿Quienes Somos?</button>
-                    <button className='font-bold text-lg'>Contatenos</button>
-                    <button className=' font-bold text-lg'>Registrate</button>
+                    <Link className='font-bold text-lg'>¿Quienes Somos?</Link>
+                    <Link className='font-bold text-lg'>Contatenos</Link>
+                    <Link to="/Registrate" className=' font-bold text-lg'>Registrate</Link>
                     <Link to="/Iniciar-sesion" className='border-2 border-btton p-2 rounded-xl mx-2 font-bold text-tti hover:bg-btton hover:text-white text-lg'>Iniciar Sesión</Link>
                 </div>
             </header>
@@ -56,6 +56,7 @@ export const Home = () => {
                     </div>
                 </div>
             </main>
+        </div>
         </div>
     )
 }

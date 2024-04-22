@@ -1,10 +1,11 @@
 import { pool } from "../db.js";
 
-export const createUser = (req, res) => {
+export const createUser = async (req, res) => {
   const { email, passw } = req.body;
-  pool.query("INSERT INTO usuarios(email, passw) VALUES (?,?)", [
+  await pool.query("INSERT INTO usuarios(email, passw ) VALUES (?,?)", [
     email,
     passw,
   ]);
-  res.send("Creando usuarios");
+  res.json({"URL": "/Registrate/typeUser"})
+
 };

@@ -44,6 +44,7 @@ export const Guia = () => {
     }
   }
   return (
+    <div className=' bg-home py-4 xl:py-20'>
     <div className="flex flex-col flex-wrap items-center mx-3 my-5 p-5 bg-white rounded-xl xl:mx-20">
       <header className=" w-full flex flex-col items-center xl:flex-row xl:justify-around">
         <Link to='/'><img src={MSG} alt="No found" className='xl:flex w-44' /></Link>
@@ -148,6 +149,7 @@ export const Guia = () => {
         </form>
         <img src={Guide} alt="" className="Guide w-1/2 xl:hidden" />
       </main>
+    </div>
     </div>
   );
 }

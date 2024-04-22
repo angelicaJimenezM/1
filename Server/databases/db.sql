@@ -37,3 +37,7 @@ CREATE TABLE `contactenos` (
 CREATE TABLE `factura` (
     n_factura INTEGER PRIMARY KEY AUTO_INCREMENT, nombre VARCHAR(150) NOT NULL, cliente VARCHAR(150) NOT NULL, fecha_emision DATE NOT NULL, subtotal INTEGER(300) NO NULL, descuentos INTEGER(300) NULL, total INTEGER(300) NOT NULL
 );
+CREATE TABLE tipos_cuenta (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tipo VARCHAR(255) NOT NULL
+);

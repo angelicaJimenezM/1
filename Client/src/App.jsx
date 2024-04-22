@@ -11,23 +11,21 @@ import { TypeUsers } from '../src/View/TypeUsers';
 import { Tourist } from './View/Tourist';
 import { Guia } from './View/Guia';
 import { Provider } from './View/Provider';
-
+import { SignIn } from './View/SignIn';
+import { Msg } from './View/Msg'
 function App() {
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<div className='h-screen bg-home py-4'><Home /></div>} />
-        <Route path="/Iniciar-sesion" element={<div className=' bg-home py-4 xl:py-20'><UserForm /></div>} />
-        <Route path="/Iniciar-sesion/typeUser" element={<TypeUsers />} />
-        <Route path="/Iniciar-sesion/typeUser/Turista" element={<div>
-          <div className=' bg-home py-4 xl:py-20'>
-          <Tourist />
-        </div>
-        </div>} />
-        <Route path='/Iniciar-sesion/typeUser/Guia' element={<div className=' bg-home py-4 xl:py-20'><Guia /></div>} />
-        <Route path='/Iniciar-sesion/typeUser/Proveedor' element={<div className=' bg-home py-4 xl:py-20'><Provider /></div>} />
-
+        <Route path="/" element={<Home />} />
+        <Route path="/Registrate" element={<UserForm />} />
+        <Route path="/Registrate/typeUser" element={<TypeUsers />} />
+        <Route path="/Registrate/typeUser/Turista" element={<Tourist />} />
+        <Route path='/Registrate/typeUser/Guia' element={<Guia />} />
+        <Route path='/Registrate/typeUser/Proveedor' element={<Provider />} />
+        <Route path='/Iniciar-sesion' element={<SignIn />} />
+        <Route path='/Msg' element = {<Msg />} />
       </Routes>
     </BrowserRouter>
   )

@@ -8,19 +8,19 @@
   font-style: normal;
 }
 .Form {
-  max-height: 30rem;
+  max-height: 40rem;
   scrollbar-width: thin;
   scrollbar-color: #9ed4c6 #f5f5f5;
 }
 .Tourist {
   position: absolute;
-  margin-top: 25rem;
+  margin-top: 34.3rem;
   right: 14.9rem;
   width: 40%;
 }
 .Guide {
   position: absolute;
-  margin-top: 27.5rem;
+  margin-top: 37.5rem;
   left: 13.5rem;
 }
 .Main {

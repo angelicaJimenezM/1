@@ -3,4 +3,4 @@ import {createUser} from '../controller/user.controller.js'
 
 export const router = Router();
 
-router.post('/Iniciar-sesion',createUser)
+router.post('/Registrate',createUser)

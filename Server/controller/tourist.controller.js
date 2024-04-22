@@ -1,5 +1,5 @@
 import { pool } from "../db.js";
-export const createTourist = (req, res) => {
+export const createTourist = async (req, res) => {
   const {
     nombre,
     apellido,
@@ -12,7 +12,7 @@ export const createTourist = (req, res) => {
     n_idiomas,
     idiomas,
   } = req.body;
-  pool.query(
+  await pool.query(
     "INSERT INTO turista(nombre,apellido,edad,sexo,interas,s_email,n_telefono,c_emergencia,n_idiomas,idiomas) VALUES(?,?,?,?,?,?,?,?,?,?)",
     [
       nombre,
@@ -27,5 +27,5 @@ export const createTourist = (req, res) => {
       idiomas,
     ]
   );
-  res.send("Creando Turista")
+  res.send("Creando Turista");
 };

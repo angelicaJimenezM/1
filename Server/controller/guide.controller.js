@@ -1,6 +1,6 @@
 import { pool } from "../db.js";
 
-export const createGuide = (req, res) => {
+export const createGuide = async (req, res) => {
   const {
     nombre,
     apellido,
@@ -11,7 +11,7 @@ export const createGuide = (req, res) => {
     sexo,
     s_email,
   } = req.body;
-  pool.query(
+  await pool.query(
     "INSERT INTO guia(nombre,apellido,n_telefono,idiomas,n_idiomas,edad,sexo,s_email) VALUES (?,?,?,?,?,?,?,?)",
     [nombre, apellido, n_telefono, idiomas, n_idiomas, edad, sexo, s_email]
   );

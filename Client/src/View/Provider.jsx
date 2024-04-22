@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom'
 import Supplier from '../assets/Image/Provider.png'
 export const Provider = () => {
   return (
+    <div className=' bg-home py-4 xl:py-20'>
     <div className="flex flex-col  items-center mx-4  my-2 p-5 bg-white xl:mx-20 rounded-xl h-auto ">
     <header className=' w-full flex flex-col items-center xl:flex-row xl:justify-around '>
         <Link to='/'><img src={MSG} alt="No found" className='xl:flex w-44' /></Link>
@@ -84,6 +85,7 @@ export const Provider = () => {
           </div>
         </form>
       </main>
+    </div>
     </div>
   );
 };

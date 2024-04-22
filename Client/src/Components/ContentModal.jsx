@@ -2,19 +2,13 @@ import { Icons } from '../Components/Icons';
 import { faX } from '@fortawesome/free-solid-svg-icons';
 //----------------------------------------------
 import Check from '../assets/Icons/Check.png';
-import { useState } from 'react';
 //----------------------------------------------
 export const ContentModal = () => {
-    const [check,setCheck] = useState(false);
-    const hadleClick = ()=> setCheck(!check);
-
-    let newClass =  check ? 'modal' : ''
     
     return (
-        <div className={`${newClass}fixed top-0 left-0 w-screen h-screen bg-modal flex justify-center items-center z-50`}>
+        <div className={`fixed top-0 left-0 w-screen h-screen bg-modal flex justify-center items-center z-50`}>
             <main className="w-80 h-72 px-5 bg-white rounded-2xl ">
                 <header className='w-full flex justify-end'><button
-                onClick={hadleClick}
                 ><Icons icon={faX} css='text-xl  p-2 cursor-pointer' /></button></header>
                 <div className='w-full h-72 grid grid-rows-2'>
                     <div className='flex justify-center items-center'>
