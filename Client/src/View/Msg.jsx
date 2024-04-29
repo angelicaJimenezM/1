@@ -25,7 +25,7 @@ export const Msg = () => {
         </p>
         <img src={LogoForm} alt="No found" />
         <div className='w-full flex justify-center'>
-            <Link className='w-64 bg-home h-14 rounded-lg text-xl font-bold flex justify-center items-center'>
+            <Link to = "/Msg/TouristPlan" className='w-64 bg-home h-14 rounded-lg text-xl font-bold flex justify-center items-center'>
             Registra
             </Link>
         </div>

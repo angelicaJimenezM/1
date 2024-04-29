@@ -32,7 +32,7 @@
 .Logo {
   width: 40%;
 }
-.modal{
+.modal {
   visibility: hidden;
   opacity: 0;
 }
@@ -43,10 +43,16 @@
     scrollbar-color: #9ed4c6 #f5f5f5;
   }
 }
-.header{
+.header {
   border-bottom-left-radius: 3rem;
   border-bottom-right-radius: 3rem;
 }
-.txt{
+.txt {
   font-size: 1.8em;
+}
+.text {
+  font-size: 25px;
+}
+.TouristPlan {
+  box-shadow: 2px 2px 30px 1px rgba(0, 0, 0, 0.3);
 }
