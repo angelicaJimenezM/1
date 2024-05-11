@@ -3,4 +3,4 @@ import {createTourist} from '../controller/tourist.controller.js'
 
 export const router = Router();
 
-router.post('/Registrate/typeUser/Turista',createTourist);
+router.post('/Registrate/Turista',createTourist);

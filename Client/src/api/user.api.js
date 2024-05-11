@@ -1,28 +1,23 @@
 import axios from "axios";
 
 //Esta función createUserRequest es una función asíncrona que utiliza Axios, para hacer solicitudes HTTP para realizar una solicitud POST a la URL con los datos del usuario proporcionados en el objeto user.
-export const createUserRequest = async (user) =>{
+export const createUserRequest = async (user) => {
   try {
-    const response = await axios.post(
-      "http://localhost:3000/Registrate",
-      user
-    );
-    response.data.URL
-      ? (window.location.href = response.data.URL)
-      : console.log(response.data);
+    const response = await axios.post("http://localhost:3000/Registrate", user);
+    console.log(response)
   } catch (e) {
-    console.log(e);
+    console.error(e);
   }
-}
+};
 
 //Esta función createGuideRequest es una función asíncrona que utiliza Axios, para hacer solicitudes HTTP para realizar una solicitud POST a la URL con los datos del guía proporcionados en el objeto guide.
 export const createGuideRequest = async (guide) =>
-  await axios.post("http://localhost:3000/Registrate/typeUser/Guia", guide);
+  await axios.post("http://localhost:/Registrate/Guia", guide);
 
 //Esta función createTouristRequest es una función asíncrona que utiliza Axios, para hacer solicitudes HTTP para realizar una solicitud POST a la URL con los datos del turista proporcionados en el objeto tourist.
 export const createTouristRequest = async (tourist) =>
   await axios.post(
-    "http://localhost:3000/Registrate/typeUser/Turista",
+    "http://localhost:3000/Registrate/Turista",
     tourist
   );
 
@@ -42,16 +37,15 @@ export const loginRequest = async (user) => {
   }
 };
 
-export const typeUser = async (type) => {
+
+export const createTouristPackage = async (tPackage) => {
   try {
     const response = await axios.post(
-      "http://localhost:3000/Registrate/typeUser",
-      type
+      "http://localhost:3000/Msg/TouristPlan",
+      tPackage
     );
-    response.data.URL
-      ? (window.location.href = response.data.URL)
-      : console.log(response.data);
+    console.log(response);
   } catch (e) {
-    console.log(e);
+    console.error(e);
   }
 };

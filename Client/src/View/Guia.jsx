@@ -24,25 +24,26 @@ export const Guia = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
       // Llama a la función createGuideRequest para enviar los datos del usuario al backend
       const response = await createGuideRequest({
-        nombre: nombre,
-        apellido: apellido,
+        nombre,
+        apellido,
         n_telefono: telefono,
-        idiomas: idiomas,
+        idiomas,
         n_idiomas: nivel,
-        edad: edad,
-        sexo: sexo,
+        edad, 
+        sexo
       });
       console.log(response)
       // Maneja la respuesta del backend, por ejemplo, muestra un mensaje de éxito (Registrado con exito)
     } catch (error) {
       console.error('Error al registrar usuario:', error);
-      // Maneja cualquier error que pueda ocurrir al enviar la solicitud      }
+      // Maneja cualquier error que pueda ocurrir al enviar la solicitud
     }
-  }
+  };
+  
   return (
     <div className=' bg-home py-4 xl:py-20'>
     <div className="flex flex-col flex-wrap items-center mx-3 my-5 p-5 bg-white rounded-xl xl:mx-20">

@@ -13,7 +13,8 @@ export default {
           'title': '#271874',
           'link': '#1A73E8',
           'secod': '#9D9D99',
-          'modal': 'rgba(0, 0, 0, 0.5)'
+          'modal': 'rgba(0, 0, 0, 0.5)',
+          'Title-home': '#88908F'
       }
     },
   },

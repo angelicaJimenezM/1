@@ -3,24 +3,26 @@ import MSG from '../assets/Icons/Logo.jpg';
 import { Link } from 'react-router-dom';
 import { Button } from '../Components/Button'
 import { useState } from 'react';
-import {loginRequest} from '../api/user.api'
+import { loginRequest } from '../api/user.api'
 export const SignIn = () => {
-    
-    const [email,setEmail] = useState('')
-    const [password,setPassword] = useState('')
-    
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [tipo_usuario, setTipo_usuario] = useState('');
+
     const handleChange = (e, setValue) => {
         setValue(e.target.value);
     }
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try{
+        try {
             const response = await loginRequest({
-                email:email,
-                passw:password
-            }) 
+                email: email,
+                passw: password,
+                tipo_usuario
+            })
             console.log(response)
-        }catch(err){
+        } catch (err) {
             console.log(err)
         }
     }
@@ -31,11 +33,11 @@ export const SignIn = () => {
                     <Link to='/'><img src={MSG} alt="No found" className='xl:flex w-44' /></Link>
                     <div className=' grid grid-rows-2 gap-y-3 justify-center xl:hidden'>
                         <div className=' text-4xl text-center'>
-                            <p className='font-light'>Regístrate</p>
+                            <p className='font-light'>Iniciar Sesion</p>
                         </div>
                         <div className='w-full flex gap-x-3 '>
-                            <p className='font-normal text-lg'>¿Ya tienes una cuenta? </p>
-                            <Link className='text-link font-normal text-lg'>Iniciar sesión</Link>
+                            <p className='font-normal text-lg'>¿Aun no tienes una cuenta? </p>
+                            <Link to="/Registrate" className='text-link font-normal text-lg'>Registrate</Link>
                         </div>
                     </div>
                 </header>
@@ -73,6 +75,12 @@ export const SignIn = () => {
                             placeholder="Ingrese su contraseña"
                             className="border border-gray-400 w-full p-3 rounded-xl pl-3 mb-5 my-3 outline-none"
                         />
+                        <select name="" id="" className='border border-black w-full p-3 rounded-lg my-8' onChange={(event) => { handleChange(event, setTipo_usuario) }}>
+                            <option value="">Selecciona una opción</option>
+                            <option value="Turista">Turista</option>
+                            <option value="Guia">Guia</option>
+                            <option value="Proveedor">Proveedor</option>
+                        </select>
                         <div className='text-center'>
                             <Button
                                 label="Inciar Sesión"

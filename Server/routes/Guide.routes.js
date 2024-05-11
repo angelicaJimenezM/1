@@ -1,7 +1,7 @@
-import {Router} from 'express';
-import {createGuide} from '../controller/guide.controller.js'
+import { Router } from "express";
+import { createGuide } from "../controller/guide.controller.js";
 
 export const router = Router();
 
-router.post('/Registrate/typeUser/Guia',createGuide);
-
+// Endpoint de registrar un guia
+router.post("/Registrate/Guia", createGuide);
