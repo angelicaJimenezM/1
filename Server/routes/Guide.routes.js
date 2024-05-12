@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createGuide } from "../controller/guide.controller.js";
+import { createGuide } from "../controller/Guide/guide.controller.js";
 
 export const router = Router();
 

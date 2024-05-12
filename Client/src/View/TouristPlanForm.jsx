@@ -2,7 +2,7 @@ import Logo from '../assets/Icons/Rio.png';
 import { Button } from '../Components/Button';
 import { createTouristPackage } from '../api/user.api'
 import { useState } from 'react'
-import Swal from 'sweetalert2'
+import  {Successful} from '../Utils/Alerts.js'
 export const TouristPlanForm = () => {
 
     const [nombre, setNombre] = useState('');
@@ -25,13 +25,7 @@ export const TouristPlanForm = () => {
                 comidas,
             })
             console.log(response)
-            Swal.fire({
-                position: "center",
-                icon: "success",
-                title: "Plan Turistico guardado exitosamente",
-                showConfirmButton: false,
-                timer: 2500
-            });
+            Successful();
         } catch (e) {
             console.error(e)
         }

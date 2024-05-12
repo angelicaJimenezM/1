@@ -1,5 +1,5 @@
 import {Router} from 'express';
-import {createTourist} from '../controller/tourist.controller.js'
+import {createTourist} from '../controller/Tourist/tourist.controller.js'
 
 export const router = Router();
 

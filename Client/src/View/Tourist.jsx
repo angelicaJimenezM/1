@@ -12,7 +12,7 @@ import { handleChangeText, handleChangenumber } from '../Utils/InputValidation'
 import { createTouristRequest } from '../api/user.api.js'
 //-----------------------------------------------------------
 import { Button } from "../Components/Button";
-
+import {Successful} from '../Utils/Alerts.js'
 export const Tourist = () => {
     //Almacenamos el valor del input en el estado utilizando el hook useState
     const [nombre, setNombre] = useState('');
@@ -27,6 +27,7 @@ export const Tourist = () => {
     const [nivel, setNivel] = useState('')
     const handleSubmit = async (e) => {
         e.preventDefault();
+        Successful();
         try {
             const response = await createTouristRequest({
                 nombre: nombre,
@@ -40,7 +41,7 @@ export const Tourist = () => {
                 n_idiomas: idiomas,
                 idiomas: nivel
             })
-            console.log(response)
+            console.log(response.data)
         } catch (error) {
             console.error('Error al registrar usuario:', error)
         }

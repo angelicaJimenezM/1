@@ -1,6 +1,6 @@
-import { GuideRepository } from "../models/User/GuideRepository.js";
-import { Guide } from "../models/User/Guide.js";
-import { GuideHelper } from "../models/User/GuideHelper.js";
+import { GuideRepository } from "../../models/User/Guide/GuideRepository.js";
+import { Guide } from "../../models/User/Guide/Guide.js";
+import { GuideHelper } from "../../models/User/Guide/GuideHelper.js";
 
 const guideRepository = new GuideRepository();
 export const createGuide = async (req, res) => {
@@ -19,9 +19,7 @@ export const createGuide = async (req, res) => {
 
   //Validar los datos
   const erros = GuideHelper.validarGuide(guide);
-  if (erros.length > 0) {
-    return res.status(400).json({ erros });
-  }
+  erros.length > 0 ? res.status(400).json({ erros }): res.status(200).json({'Message':'Successful'})
   //Registrar el guia en la base de datos
   try {
     const insertarGuide = await guideRepository.insertGuide(guide);

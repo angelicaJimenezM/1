@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react';
 //Imoprtamos la funcion desde axios para hacer el puente desde el Front-End al Back-End
 import { createGuideRequest } from '../api/user.api'
+import { Successful } from "../Utils/Alerts";
+
 export const Guia = () => {
 
   const [nombre, setNombre] = useState('');
@@ -18,22 +20,18 @@ export const Guia = () => {
   const [edad, setEdad] = useState('');
   const [sexo, setSexo] = useState('');
 
-  const handleChange = (e, setValue) => {
-    setValue(e.target.value);
-  }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
     try {
       // Llama a la función createGuideRequest para enviar los datos del usuario al backend
+      Successful();
       const response = await createGuideRequest({
         nombre,
         apellido,
         n_telefono: telefono,
         idiomas,
         n_idiomas: nivel,
-        edad, 
+        edad,
         sexo
       });
       console.log(response)
@@ -43,16 +41,20 @@ export const Guia = () => {
       // Maneja cualquier error que pueda ocurrir al enviar la solicitud
     }
   };
-  
+
+  const handleChange = (e, setValue) => {
+    setValue(e.target.value);
+  }
   return (
-    <div className=' bg-home py-4 xl:py-20'>
     <div className="flex flex-col flex-wrap items-center mx-3 my-5 p-5 bg-white rounded-xl xl:mx-20">
+
       <header className=" w-full flex flex-col items-center xl:flex-row xl:justify-around">
         <Link to='/'><img src={MSG} alt="No found" className='xl:flex w-44' /></Link>
         <div className='w-full text-center p-1 pb-2 xl:hidden'>
           <p className='text-2xl font-bold'>Crea una cuenta como guia </p>
           <p className='text-base font-bold text-gray-400'>Ingresa tu informacion</p>
         </div>
+
       </header>
       <main className="Main py-10 mb-5 px-10 rounded-xl xl:w-full xl:grid xl:grid-cols-2 xl:border-none">
         <div className='hidden xl:flex w-full justify-center items-center'>
@@ -150,7 +152,6 @@ export const Guia = () => {
         </form>
         <img src={Guide} alt="" className="Guide w-1/2 xl:hidden" />
       </main>
-    </div>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { pool } from "../../db.js";
+import { pool } from "../../../db.js";
 export class ProveedorRepository {
   async insertProveedor(Proveedor) {
     const sql =

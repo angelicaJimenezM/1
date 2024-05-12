@@ -1,4 +1,4 @@
-import { pool } from "../db.js";
+import { pool } from "../../db.js";
 
 export const createUser = async (req, res) => {
   const { email, passw, tipo_usuario } = req.body;
