@@ -4,7 +4,7 @@ import { router as iniciar_sesion } from "./routes/user.routes.js";
 import { router as createGuide } from "./routes/Guide.routes.js";
 import { router as createTourist } from "./routes/Tourist.routes.js";
 import { router as login } from "./routes/Login.routes.js";
-import { router as touristPackage } from "./routes/Package.routes.js";
+import { router as touristPackage } from "./routes/Package/Package.routes.js";
 console.clear();
 const app = express();
 

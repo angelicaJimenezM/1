@@ -1,11 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Publica-Sans-Round";
+  src: url("../assets/fonts/PublicaSansRound-UlLt.otf");
+}
+
 * {
-  font-family: "Roboto Slab", serif;
-  font-optical-sizing: auto;
-  font-weight: weight;
-  font-style: normal;
+  font-family: "Publica-Sans-Round";
 }
 .Form {
   max-height: 40rem;
@@ -23,12 +26,7 @@
   margin-top: 37.5rem;
   left: 13.5rem;
 }
-.Main {
-  position: relative;
-  width: 22rem;
-  border: 1px solid #000;
-  display: flex;
-}
+
 .Logo {
   width: 40%;
 }
@@ -56,20 +54,45 @@
 .TouristPlan {
   box-shadow: 2px 2px 30px 1px rgba(0, 0, 0, 0.3);
 }
-.ContainerHome{
+.ContainerHome {
   background-color: #f8f8f8;
 }
-.Home{
+.Home {
   width: 85%;
-  height: 90%;
   box-shadow: 2px 2px 30px 1px rgba(0, 0, 0, 0.3);
 }
 @media screen and (max-width: 500px) {
-  .Home{
+  .Home {
     width: 90%;
     height: 80%;
   }
 }
-.Button{
-  background: linear-gradient(45deg,#cae5de, #9ED4C6, #33c29c);
+.Button {
+  background: linear-gradient(45deg, #cae5de, #9ed4c6, #33c29c);
+}
+.email {
+  top: 3.2rem;
+  right: 3.2rem;
+}
+.passw {
+ right: 5.8rem;
+ top: 2.4rem;
+}
+.EmailText {
+  top:0.7rem
+}
+.PasswText {
+  margin-top: 10rem;
+}
+.CuentaText{
+  top:0.6rem
+}
+.Filter{
+  top:3rem;
+  right: 6.3rem;
+}
+@media screen and (min-width: 1280px) {
+  .email {
+    right: 3.2rem;
+  }
 }

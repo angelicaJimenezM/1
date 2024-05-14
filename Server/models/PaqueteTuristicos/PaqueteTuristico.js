@@ -1,5 +1,5 @@
 export class PaqueteTuristico{
-    constructor(nombre, destinos, fecha_salida, fecha_llegada, actividades,  alojamiento, comidas, costo_total, estado
+    constructor(nombre, destinos, fecha_salida, fecha_llegada, actividades,  alojamiento, comidas
 ){
     this.nombre = nombre;
     this.destinos = destinos;
@@ -8,8 +8,6 @@ export class PaqueteTuristico{
     this.actividades = actividades;
     this.alojamiento = alojamiento;
     this.comidas = comidas;
-    this.costo_total = costo_total;
-    this.estado = estado;
     }
     toJSON(){
         return[
@@ -20,8 +18,6 @@ export class PaqueteTuristico{
             this.actividades,
             this.alojamiento,
             this.comidas,
-            this.costo_total,
-            this.estado
         ];
     }
 }

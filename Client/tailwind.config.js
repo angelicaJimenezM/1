@@ -14,7 +14,10 @@ export default {
           'link': '#1A73E8',
           'secod': '#9D9D99',
           'modal': 'rgba(0, 0, 0, 0.5)',
-          'Title-home': '#88908F'
+          'Title-home': '#88908F',
+          'signUp': '#B0DBD0',
+          'input': '#F9FAFB',
+          'Card': '#f5f5f5'
       }
     },
   },

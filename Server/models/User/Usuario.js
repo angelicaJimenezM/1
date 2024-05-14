@@ -1,12 +1,14 @@
 export class Usuario{
-    constructor(email,pasw){
+    constructor(email,passw,tipo_usuario){
         this.email = email;
-        this.pasw = pasw;
+        this.passw = passw;
+        this.tipo_usuario = tipo_usuario
     }
     toJSON(){
         return[
             this.email,
-            this.pasw
+            this.passw,
+            this.tipo_usuario
         ];
     }
 }

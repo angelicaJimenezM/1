@@ -1,5 +1,7 @@
-import { pool } from "../../db.js";
+import { PaqueteTuristico } from "../../models/PaqueteTuristicos/PaqueteTuristico.js";
+import { PaqueteTuristicoRepository } from "../../models/PaqueteTuristicos/PaqueteTuristicoRepository.js";
 
+const paqueteturisticos = new PaqueteTuristicoRepository();
 export const createPackage = async (req, res) => {
   const {
     nombre,
@@ -10,19 +12,32 @@ export const createPackage = async (req, res) => {
     alojamiento,
     comidas,
   } = req.body;
-  await pool.query(
-    "INSERT INTO paqueteturisticos (nombre,destinos,fecha_salida,fecha_llegada,actividades,alojamiento,comidas) VALUES (?,?,?,?,?,?,?)",
-    [
-      nombre,
-      destinos,
-      fecha_salida,
-      fecha_llegada,
-      actividades,
-      alojamiento,
-      comidas,
-    ]
+
+  const packageT = new PaqueteTuristico(
+    nombre,
+    destinos,
+    fecha_salida,
+    fecha_llegada,
+    actividades,
+    alojamiento,
+    comidas
   );
-  res.json({
-    Message: "Todo correcto",
-  });
+
+  try{
+    const insertPackage = paqueteturisticos.insertPaqueteTuristico(packageT)
+  }catch(e){
+    console.error(e)
+  }
+  
 };
+
+export const showPackage = async (req, res) => {
+  try {
+    const showPackage = await paqueteturisticos.showPackage();
+    res.json(showPackage);
+  } catch (error) {
+    console.error('Error en el controlador al obtener usuarios:', error);
+    res.status(500).json({ error: 'Error interno del servidor' });
+  }
+}
+

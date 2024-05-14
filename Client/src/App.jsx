@@ -11,7 +11,8 @@ import { Guia } from './View/Guia';
 import { Provider } from './View/Provider';
 import { SignIn } from './View/SignIn';
 import { Msg } from './View/Msg';
-import { TouristPlanForm } from './View/TouristPlanForm'
+import { TouristPlanForm } from './View/TouristPlanForm';
+import { Package } from './View/package/Package';
 function App() {
 
   return (
@@ -20,13 +21,17 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Registrate" element={<UserForm />} />
         <Route path="/Registrate/Turista" element={<Tourist />} />
-        <Route path='/Registrate/Guia' element={<Guia />} />
-        <Route path='/Registrate/Proveedor' element={<Provider />} />
-        <Route path='/Iniciar-sesion' element={<SignIn />} />
-        <Route path='/Msg' element={<Msg />} />
-        <Route path='/Msg/TouristPlan' element={<TouristPlanForm />} />
+        <Route path="/Registrate/Guia" element={<Guia />} />
+        <Route path="/Registrate/Proveedor" element={<Provider />} />
+        <Route path="/Iniciar-sesion" element={<SignIn />} />
+        <Route path="/Msg" element={<Msg />} />
+        <Route path="/Msg/TouristPlan" element={<TouristPlanForm />} />
+        <Route path="/Msg/planes" element={<Package />} />
       </Routes>
     </BrowserRouter>
+
+
+
   )
 }
 

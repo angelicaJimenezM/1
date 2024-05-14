@@ -3,7 +3,8 @@ export class UsuarioHelper {
       const errors = [];
       if (
         !Usuario.email ||
-        !Usuario.pawss 
+        !Usuario.passw ||
+        !Usuario.tipo_usuario
       ) {
         errors.push("Todos los campos son obligatorios");
       }
