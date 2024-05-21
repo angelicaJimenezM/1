@@ -9,13 +9,13 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 import { loginRequest } from '../api/user.api'
-
+import { useNavigate } from 'react-router-dom';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { faLock, faFilter } from '@fortawesome/free-solid-svg-icons';
 import { Icons } from '../Components/Icons';
 export const SignIn = () => {
-
+    const navigate = useNavigate();
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [tipo_usuario, setTipo_usuario] = useState('');
@@ -32,6 +32,7 @@ export const SignIn = () => {
                 tipo_usuario
             })
             console.log(response)
+            navigate(`${response.redirectUrl}`,{state:{response}})
         } catch (err) {
             console.log(err)
         }

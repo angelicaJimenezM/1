@@ -1,5 +1,4 @@
 import axios from "axios";
-
 //Esta función createUserRequest es una función asíncrona que utiliza Axios, para hacer solicitudes HTTP para realizar una solicitud POST a la URL con los datos del usuario proporcionados en el objeto user.
 export const createUserRequest = async (user) => {
   try {
@@ -7,12 +6,21 @@ export const createUserRequest = async (user) => {
     return response.data.tipo_usuario;
   } catch (e) {
     console.error(e);
+
   }
 };
 
 //Esta función createGuideRequest es una función asíncrona que utiliza Axios, para hacer solicitudes HTTP para realizar una solicitud POST a la URL con los datos del guía proporcionados en el objeto guide.
-export const createGuideRequest = async (guide) =>
-  await axios.post("http://localhost:3000/Registrate/Guia", guide);
+export const createGuideRequest = async (guide) =>{
+  try{
+   const response = await axios.post("http://localhost:3000/Registrate/Guia", guide);
+  console.log(response);
+  }catch(e){
+    console.error(e)
+    throw e; // Re-lanza el error para que pueda ser capturado en el componente
+
+  }
+}
 
 //Esta función createTouristRequest es una función asíncrona que utiliza Axios, para hacer solicitudes HTTP para realizar una solicitud POST a la URL con los datos del turista proporcionados en el objeto tourist.
 export const createTouristRequest = async (tourist) =>
@@ -24,11 +32,7 @@ export const loginRequest = async (user) => {
       "http://localhost:3000/Iniciar-sesion",
       user
     );
-    response.data.redirectUrl
-      ? // Redirige al usuario a la URL de redirección proporcionada por el servidor
-        (window.location.href = response.data.redirectUrl)
-      : // Maneja otras respuestas según sea necesario
-        console.log(response.data);
+    return response.data
   } catch (error) {
     console.error(error);
   }
@@ -46,6 +50,24 @@ export const createTouristPackage = async (tPackage) => {
   }
 };
 
+export const createProviderRequest = async (providerU) => {
+  try{
+    const response = await axios.post("http://localhost:3000/Registrate/Proveedor",providerU)
+    console.log(response)
+  }catch(e){
+    console.error(e)
+  }
+}
+
+export const createItinerartRequest = async (Itinerary) => {
+  try{
+    const response = await axios.post("http://localhost:3000/Msg/Itinerario",Itinerary)
+    console.log(response)
+  }catch(e){
+    console.error(e)
+  }
+}
+
 //Obtenemos los datos
 export const showPackage = async () => {
   try {
@@ -55,3 +77,4 @@ export const showPackage = async () => {
     console.error(e);
   }
 };
+

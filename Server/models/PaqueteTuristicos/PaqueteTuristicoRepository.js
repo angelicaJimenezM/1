@@ -11,7 +11,7 @@ export class PaqueteTuristicoRepository {
     }
   }
 
-  async showPackage(PaqueteTuristico) {
+  async showPackage() {
     const sql = "SELECT * FROM paqueteturisticos";
     try {
       const [rows] = await pool.query(sql);

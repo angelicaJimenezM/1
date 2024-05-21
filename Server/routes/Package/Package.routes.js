@@ -8,3 +8,4 @@ export const router = Router();
 router.post("/Msg/TouristPlan", createPackage);
 
 router.get("/Msg/planes", showPackage);
+

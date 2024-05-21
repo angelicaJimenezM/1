@@ -12,10 +12,11 @@ import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { faLock, faFilter } from '@fortawesome/free-solid-svg-icons';
 import { Icons } from '../Components/Icons';
+import { Successful } from '../Utils/Alerts';
 export const UserForm = () => {
     let navigate = useNavigate()
-    const [email, setEmail] = useState('');
-    const [password, setPaswword] = useState('');
+    const [emailLocal, setEmailLocal] = useState(''); // Estado local para el email
+    const [passwordLocal, setPasswordLocal] = useState(''); // 
     const [tipo_usuario, setTipo_usuario] = useState('');
 
     const handleChange = (e, setValue) => {
@@ -26,13 +27,13 @@ export const UserForm = () => {
         try {
             // Llama a la función createUserRequest para enviar los datos del usuario al backend
             const response = await createUserRequest({
-                email: email,
-                passw: password,
+                email: emailLocal,
+                passw: passwordLocal,
                 tipo_usuario
             });
+            Successful();
             console.log(response); // Maneja la respuesta del backend, por ejemplo, muestra un mensaje de éxito (Registrado con exito)
-
-            response == 'Turista' ? navigate('/Registrate/Turista') : response == 'Guia' ? navigate('/Registrate/Guia') : navigate('/Registrate/Proveedor')
+            response == 'Turista' ? navigate('/Registrate/Turista') : response == 'Guia' ? navigate('/Registrate/Guia', { state: { email: emailLocal, passw: passwordLocal, usuario: tipo_usuario } }) : navigate('/Registrate/Proveedor')
         } catch (error) {
             console.error('Error al registrar usuario:', error);
             // Maneja cualquier error que pueda ocurrir al enviar la solicitud
@@ -72,9 +73,9 @@ export const UserForm = () => {
                         <span className='email relative mx-2'><Icons icon={faEnvelope} css='text-xl' /></span>
                         <input
                             type="email"
-                            value={email}
+                            value={emailLocal}
                             onChange={(event) => {
-                                handleChange(event, setEmail)
+                                handleChange(event, setEmailLocal)
                             }}
                             placeholder='Ingrese su correo'
                             className='xl:w-96 w-full p-3 pl-9 mb-5 my-3 border border-gray-300 bg-input rounded-lg text-black outline-none placeholder:text-black' />
@@ -84,9 +85,9 @@ export const UserForm = () => {
                         <span className='passw relative'><Icons icon={faLock} css='text-xl mx-2' /></span>
                         <input
                             type="password"
-                            value={password}
+                            value={passwordLocal}
                             onChange={(event) => {
-                                handleChange(event, setPaswword)
+                                handleChange(event, setPasswordLocal)
                             }}
                             placeholder='Ingrese su contraseña'
                             className='xl:w-96 w-full p-3 pl-9 mb-5 border border-gray-300 bg-input rounded-lg text-black outline-none placeholder:text-black' />

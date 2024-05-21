@@ -25,6 +25,7 @@ export const createPackage = async (req, res) => {
 
   try{
     const insertPackage = paqueteturisticos.insertPaqueteTuristico(packageT)
+    console.log(insertPackage)
   }catch(e){
     console.error(e)
   }

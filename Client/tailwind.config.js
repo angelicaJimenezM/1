@@ -17,8 +17,14 @@ export default {
           'Title-home': '#88908F',
           'signUp': '#B0DBD0',
           'input': '#F9FAFB',
-          'Card': '#f5f5f5'
-      }
+          'Card': '#f5f5f5',
+          'Line': '#583143',
+          'NavBar': '#00F2FF',
+          'Header':'#31B0A7'
+      },
+      fontFamily: {
+        'inter': ['Inter', 'sans-serif'],
+      },
     },
   },
   plugins: [],

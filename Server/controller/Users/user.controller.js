@@ -14,7 +14,7 @@ export const createUser = async (req, res) => {
 
   //Registramos el usuarios en la base de datos
   try{
-    const insertUsers =usuariosRepository.insertUsuario(users);
+    const insertUsers = await usuariosRepository.insertUsuario(users);
     console.log(insertUsers)
   }catch(e){
     console.error(e)

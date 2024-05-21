@@ -1,13 +1,19 @@
-import { pool } from "../../db.js";
-export const login = async (req, res) => {
-  const { email, passw, tipo_usuario } = req.body;
-  const data = await pool.query(
-    "SELECT * FROM usuarios WHERE email = ? AND passw = ? AND tipo_usuario = ?",
-    [email, passw, tipo_usuario]
-  );
-  data[0].length > 0
-    ? res.json({ redirectUrl: "/Msg" })
-    : res.json({
-        Message: "No encontrado",
-      });
-};
+import AuthHandler from "../../handlers/AuthHandler.js";
+
+   export const login = async (req, res) => {
+    const { email, passw, tipo_usuario } = req.body;
+    try {
+      const authHandler = new AuthHandler(tipo_usuario);
+      const result = await authHandler.authenticate(email, passw);
+
+      result.length > 0
+        ? res.json({ redirectUrl: "/Msg", content: result })
+        : res.json({ Message: "No encontrado" });
+      return result;
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: "Error en el servidor" });
+    }
+  }
+
+

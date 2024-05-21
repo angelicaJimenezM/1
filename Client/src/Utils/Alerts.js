@@ -1,10 +1,11 @@
 import Swal from "sweetalert2";
-export const Successful = () => {
+
+export const Successful = (label) => {
   Swal.fire({
     position: "center",
     icon: "success",
-    title: "Plan Turistico guardado exitosamente",
-    showConfirmButton: false,
+    title: label,
+    showConfirmButton: true,
     timer: 2500,
   });
 };

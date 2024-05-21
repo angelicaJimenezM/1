@@ -2,7 +2,7 @@ import { pool } from "../../../db.js";
 export class GuideRepository {
   async insertGuide(Guide) {
     const sql =
-      'INSERT INTO guia(nombre,apellido,n_telefono,idiomas,n_idiomas,edad,sexo) VALUES (?, ?, ?, ?, ?, ?, ?)';
+      'INSERT INTO guia(nombre,apellido,n_telefono,idiomas,n_idiomas,edad,sexo,email,passw,tipo_usuario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
     try {
       const [result] = await pool.query(sql, Guide.toJSON());
       return result.insertId;

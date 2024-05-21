@@ -13,6 +13,8 @@ import { SignIn } from './View/SignIn';
 import { Msg } from './View/Msg';
 import { TouristPlanForm } from './View/TouristPlanForm';
 import { Package } from './View/package/Package';
+import { Itinerario } from './View/package/itinerary/Itinenario';
+import { HomeMsg } from './View/MSG/HomeMsg';
 function App() {
 
   return (
@@ -24,9 +26,13 @@ function App() {
         <Route path="/Registrate/Guia" element={<Guia />} />
         <Route path="/Registrate/Proveedor" element={<Provider />} />
         <Route path="/Iniciar-sesion" element={<SignIn />} />
-        <Route path="/Msg" element={<Msg />} />
-        <Route path="/Msg/TouristPlan" element={<TouristPlanForm />} />
-        <Route path="/Msg/planes" element={<Package />} />
+        <Route path="/Msg" element={<Msg />} >
+          <Route path='' element = {<HomeMsg/>}/>
+          <Route path="TouristPlan" element={<TouristPlanForm />} />
+          <Route path="planes" element={<Package />} />
+          <Route path="Itinerario" element={<Itinerario />} />
+        </Route>
+
       </Routes>
     </BrowserRouter>
 

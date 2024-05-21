@@ -51,9 +51,11 @@
 .text {
   font-size: 25px;
 }
-.TouristPlan {
-  box-shadow: 2px 2px 30px 1px rgba(0, 0, 0, 0.3);
+
+.Itinerary{
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.3);
 }
+
 .ContainerHome {
   background-color: #f8f8f8;
 }
@@ -95,4 +97,63 @@
   .email {
     right: 3.2rem;
   }
+  .TouristPlan {
+    box-shadow: 2px 2px 30px 1px rgba(0, 0, 0, 0.3);
+  }
+}
+.SubMenu{
+  animation: largee 0.3s ease forwards;
+}
+.navBar{
+  height: 34rem;
+  box-shadow: 2px 2px 20px 1px rgba(49, 176, 167, 0.3);
+}
+.Header{
+  box-shadow: 2px 2px 10px 1px rgba(49, 176, 167, 0.3);
+}
+.SubMain{
+  height: 30rem;
+}
+
+.navBar::-webkit-scrollbar{
+display: none;
+}
+@keyframes largee {
+  from{
+    height: 0rem;
+  }
+  to{
+    height: 5rem;
+  }
+}
+
+.welcome{
+  left: 22%;
+  top: 25%;
+  color: #EF9A61
+}
+.mobilHome{
+  height: 36.5rem;
+}
+.Content{
+ background-image: url('../assets/Image/Fondo.jpeg');
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+.newClass{
+  animation: large 0.3s ease forwards;
+}
+
+@keyframes large {
+  from{
+    width: 0rem;
+  }
+  to{
+    width: 16rem;
+  }
+}
+.TouristIMG{
+  width: 80%;
 }
