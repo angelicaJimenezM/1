@@ -52,7 +52,7 @@
   font-size: 25px;
 }
 
-.Itinerary{
+.Itinerary {
   box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.3);
 }
 
@@ -72,25 +72,26 @@
 .Button {
   background: linear-gradient(45deg, #cae5de, #9ed4c6, #33c29c);
 }
+
 .email {
   top: 3.2rem;
   right: 3.2rem;
 }
 .passw {
- right: 5.8rem;
- top: 2.4rem;
+  right: 5.8rem;
+  top: 2.4rem;
 }
 .EmailText {
-  top:0.7rem
+  top: 0.7rem;
 }
 .PasswText {
   margin-top: 10rem;
 }
-.CuentaText{
-  top:0.6rem
+.CuentaText {
+  top: 0.6rem;
 }
-.Filter{
-  top:3rem;
+.Filter {
+  top: 3rem;
   right: 6.3rem;
 }
 @media screen and (min-width: 1280px) {
@@ -101,59 +102,88 @@
     box-shadow: 2px 2px 30px 1px rgba(0, 0, 0, 0.3);
   }
 }
-.SubMenu{
+.SubMenu {
   animation: largee 0.3s ease forwards;
 }
-.navBar{
+.navBar {
   height: 34rem;
   box-shadow: 2px 2px 20px 1px rgba(49, 176, 167, 0.3);
 }
-.Header{
+.Chat {
+  box-shadow: 2px 10px 40px 1px rgba(0, 0, 0, 0.3);
+}
+.Header {
   box-shadow: 2px 2px 10px 1px rgba(49, 176, 167, 0.3);
 }
-.SubMain{
+.PackageView {
+  box-shadow: 2px 2px 15px 1px rgba(25, 152, 144, 0.3);
+}
+.SubMain {
   height: 30rem;
 }
 
-.navBar::-webkit-scrollbar{
-display: none;
+.navBar::-webkit-scrollbar {
+  display: none;
 }
 @keyframes largee {
-  from{
+  from {
     height: 0rem;
   }
-  to{
+  to {
     height: 5rem;
   }
 }
 
-.welcome{
+.welcome {
   left: 22%;
   top: 25%;
-  color: #EF9A61
+  color: #ef9a61;
 }
-.mobilHome{
+.mobilHome {
   height: 36.5rem;
 }
-.Content{
- background-image: url('../assets/Image/Fondo.jpeg');
- background-position: center;
- background-repeat: no-repeat;
- background-size: cover;
+.Content {
+  background-image: url("../assets/Image/Fondo.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.newClass{
+.newClass {
   animation: large 0.3s ease forwards;
 }
 
 @keyframes large {
-  from{
+  from {
     width: 0rem;
   }
-  to{
+  to {
     width: 16rem;
   }
 }
-.TouristIMG{
+.TouristIMG {
   width: 80%;
+}
+.ContentMessage {
+  padding: 0.1rem;
+}
+.textArea {
+  field-sizing: content;
+  box-shadow: 1px 1px 10px 1px rgba(163, 163, 163, 0.3);
+}
+.Message::-webkit-scrollbar {
+  display: none;
+}
+.SecondMessage {
+  margin-left: 40%;
+}
+.PackageContainer {
+  width: 30%;
+}
+
+.Mover{
+  margin-left: 1.4rem;
+}
+.MoverP{
+  margin-left: 0.5rem; 
 }

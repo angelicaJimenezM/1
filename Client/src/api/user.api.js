@@ -50,6 +50,17 @@ export const createTouristPackage = async (tPackage) => {
   }
 };
 
+export const getTouristPackageById = async (id) => {
+  const response = await axios.get(`http://localhost:3000/Msg/TouristPlan/${id}`);
+  return response.data.Data;
+};
+
+export const updateTouristPackage = async (id, packageData) => {
+  const response = await axios.put(`http://localhost:3000/Msg/TouristPlan/${id}`, packageData);
+  return response.data;
+};
+
+
 export const createProviderRequest = async (providerU) => {
   try{
     const response = await axios.post("http://localhost:3000/Registrate/Proveedor",providerU)
@@ -77,4 +88,5 @@ export const showPackage = async () => {
     console.error(e);
   }
 };
+//Actualizar datos
 

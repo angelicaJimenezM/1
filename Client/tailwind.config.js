@@ -20,7 +20,8 @@ export default {
           'Card': '#f5f5f5',
           'Line': '#583143',
           'NavBar': '#00F2FF',
-          'Header':'#31B0A7'
+          'Header':'#31B0A7',
+          'borderInput': 'rgb(163,163,163)'
       },
       fontFamily: {
         'inter': ['Inter', 'sans-serif'],

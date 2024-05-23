@@ -33,7 +33,7 @@ export const Msg = () => {
             <nav className='flex gap-x-16 items-center'>
                 <ul className='hidden xl:flex h-12 border-l border-r border-gray-400  gap-x-16 p-2'>
                     <li ><Link ><img src={reserva} alt="no found" className='w-8 h-8' /></Link></li>
-                    <li><Link><img src={chat} alt="No foun" className='w-8' /></Link></li>
+                    <li><Link to = 'chat'><img src={chat} alt="No foun" className='w-8' /></Link></li>
                     <li><Link><img src={factura} alt="No foun" className='w-10' /></Link></li>
                     <li><Link to="Itinerario"><img src={mapa} alt="No foun" className='w-8 h-8' /></Link></li>
                     <li className='cursor-pointer'><Link to="TouristPlan"><img src={paquete} alt="No foun" className='w-8 h-8' /></Link></li>
@@ -91,7 +91,7 @@ export const Msg = () => {
                 </ul>
             </nav>
             <h1 className='name hidden xl:flex absolute xl:font-bold xl:text-2xl xl:mx-72 bg-white p-2 xl:my-2 rounded-2xl'>Hola de nuevo, {content[0].nombre}</h1>
-            <article className='SubMain bg-white xl:my-20 xl:col-span-8 rounded-2xl flex flex-col xl:overflow-y-auto flex-wrap xl:mr-5 justify-center items-center'>
+            <article className='Message SubMain bg-white xl:my-20 xl:col-span-8 rounded-2xl flex flex-row xl:overflow-y-auto flex-wrap xl:mr-5 justify-center items-center'>
                 <Outlet />
             </article>
         </main>
