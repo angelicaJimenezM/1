@@ -55,9 +55,9 @@ export const TouristPlanForm = () => {
         response = await updateTouristPackage(id, packageData);
       } else {
         response = await createTouristPackage(packageData);
+        Successful();
       }
       console.log(response);
-      Successful();
     } catch (e) {
       console.error(e);
     }

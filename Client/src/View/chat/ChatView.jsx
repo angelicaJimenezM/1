@@ -24,7 +24,7 @@ export const ChatView = () => {
             setStoreMessage([...storeMessage, newMessage])
             setMessage('')
         }
-    }
+    } 
     
     useEffect(() => {
         const socketInstance = Socket();
@@ -41,6 +41,7 @@ export const ChatView = () => {
 
     
     const receiveMessage = (messages)=>{
+        //Operador de propagacion.
         setStoreMessage((state) => [...state, messages])
     }
     return (
