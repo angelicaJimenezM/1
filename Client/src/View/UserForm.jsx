@@ -33,7 +33,7 @@ export const UserForm = () => {
             });
             Successful();
             console.log(response); // Maneja la respuesta del backend, por ejemplo, muestra un mensaje de éxito (Registrado con exito)
-            response == 'Turista' ? navigate('/Registrate/Turista') : response == 'Guia' ? navigate('/Registrate/Guia', { state: { email: emailLocal, passw: passwordLocal, usuario: tipo_usuario } }) : navigate('/Registrate/Proveedor')
+            response == 'Turista' ? navigate('/Registrate/Turista',{state :{email: emailLocal, passw: passwordLocal, usuario: tipo_usuario}}) : response == 'Guia' ? navigate('/Registrate/Guia', { state: { email: emailLocal, passw: passwordLocal, usuario: tipo_usuario } }) : navigate('/Registrate/Proveedor')
         } catch (error) {
             console.error('Error al registrar usuario:', error);
             // Maneja cualquier error que pueda ocurrir al enviar la solicitud

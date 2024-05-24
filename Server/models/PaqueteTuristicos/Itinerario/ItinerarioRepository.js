@@ -10,4 +10,13 @@ export class ItinerarioRepository {
       throw error;
     }
   }
+  async showItinerario() {
+    const sql = "SELECT * FROM itinerarios";
+    try {
+      const [rows] = await pool.query(sql);
+      return rows;
+    } catch (e) {
+      console.error(e);
+    }
+  }
 }

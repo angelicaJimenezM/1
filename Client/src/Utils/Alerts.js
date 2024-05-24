@@ -6,6 +6,17 @@ export const Successful = (label) => {
     icon: "success",
     title: label,
     showConfirmButton: true,
-    timer: 2500,
+    timer: 3000,
+  });
+};
+
+
+export const Errors = (label) => {
+  Swal.fire({
+    position: "center",
+    icon: "error",
+    title: label,
+    showConfirmButton: true,
+    timer: 5000,
   });
 };

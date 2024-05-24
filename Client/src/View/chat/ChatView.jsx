@@ -6,6 +6,7 @@ import { useState } from 'react';
 
 
 export const ChatView = () => {
+
     const [message, setMessage] = useState('');
     const [storeMessage,setStoreMessage] = useState([])
     const [socket, setSocket] = useState(null);

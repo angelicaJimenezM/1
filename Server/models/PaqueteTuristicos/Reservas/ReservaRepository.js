@@ -1,13 +1,23 @@
 import { pool } from "../../../db.js";
 export class ReservaRepository {
-  async insertUsuario(Usuario) {
+  async insertItinerario(Usuario) {
     const sql =
-      'INSERT INTO usuarios(n_cliente, n_personas, nombre_paquete,nombre_guia, nit_itinerario, anticipo ) VALUES (?, ?, ?, ?, ?, ?)';
+      'INSERT INTO `Turistas_Itinerarios`(turista_id, itinerario_id ) VALUES (?, ?)';
     try {
       const [result] = await pool.query(sql, Usuario.toJSON());
       return result.insertId;
     } catch (error) {
       throw error;
+    }
+  }
+
+  async showItinerario() {
+    const sql = "SELECT * FROM Turistas_Itinerarios";
+    try {
+      const [rows] = await pool.query(sql);
+      return rows;
+    } catch (e) {
+      console.error(e);
     }
   }
 }

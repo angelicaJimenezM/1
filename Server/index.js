@@ -9,7 +9,7 @@ import { router as login } from "./routes/auth/Login.routes.js";
 import { router as touristPackage } from "./routes/Package/Package.routes.js";
 import { router as provider } from "./routes/Provider/Provider.routes.js";
 import { router as itinerary } from "./routes/Package/itinerary/Itinerary.routes.js";
-
+import {router as reserva} from "./routes/Package/reserva/reserva.routes.js"
 console.clear();
 const app = express();
 const server = http.createServer(app);
@@ -22,7 +22,6 @@ const io = new SocketServer(server, {
 
 io.on("connection", (socket) => {
   socket.on("chat", (data) => {
-    console.log(data)
     socket.broadcast.emit("chat", {
       from: socket.id,
       data
@@ -42,6 +41,7 @@ app.use(login);
 app.use(touristPackage);
 app.use(provider);
 app.use(itinerary);
+app.use(reserva)
 
 const port = process.env.PORT || 3000;
 server.listen(port, () => {

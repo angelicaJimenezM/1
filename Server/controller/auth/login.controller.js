@@ -7,7 +7,8 @@ import AuthHandler from "../../handlers/AuthHandler.js";
       const result = await authHandler.authenticate(email, passw);
 
       result.length > 0
-        ? res.json({ redirectUrl: "/Msg", content: result })
+        ? res.json({ redirectUrl: tipo_usuario, 
+                     content: result })
         : res.json({ Message: "No encontrado" });
       return result;
     } catch (error) {

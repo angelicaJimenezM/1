@@ -31,8 +31,11 @@ export const SignIn = () => {
                 passw: password,
                 tipo_usuario
             })
-            console.log(response)
-            navigate(`${response.redirectUrl}`,{state:{response}})
+            
+            const data = JSON.stringify(response.content[0]);
+            localStorage.setItem(email,data);
+
+            navigate(`/Msg/${response.redirectUrl}`,{state:{email}})
         } catch (err) {
             console.log(err)
         }

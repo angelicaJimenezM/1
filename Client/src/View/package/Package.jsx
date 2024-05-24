@@ -47,7 +47,7 @@ export const Package = () => {
                         <li className="flex items-center mx-2 text-sm"><img src = {bck} alt = "No found" className="w-6"/><p className="ml-3">{Package.alojamiento}</p></li>
                         <li className="flex items-center mx-2 text-sm"><img src = {cutlery} alt = 'No found' className="w-6" /><p className="ml-3">{Package.comidas}</p></li>
                         <ul className="flex flex-col gap-x-5 justify-center items-center gap-y-5">
-                            <li className="Itinerary Button w-52 p-1 text-center rounded-xl font-bold cursor-pointer" onClick={()=>naviagte(`/Msg/TouristPlan/${Package.nit}`)}>Editar</li>
+                            <li className="Itinerary Button w-52 p-1 text-center rounded-xl font-bold cursor-pointer" onClick={()=>naviagte(`/Msg/Guia/TouristPlan/${Package.nit}`)}>Editar</li>
                             <li className="Itinerary bg-red-400 w-52 p-1 text-center rounded-xl font-bold cursor-pointer" onClick={()=>naviagte(`/Msg/TouristPlan/${Package.nit}`)}>Eliminar</li>
                         </ul>
                     </ul>

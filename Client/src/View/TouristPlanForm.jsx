@@ -22,6 +22,7 @@ export const TouristPlanForm = () => {
       const fetchPackage = async () => {
         try {
           const packageData = await getTouristPackageById(id);
+          console.log(packageData)
           setNombre(packageData.nombre);
           setDestinos(packageData.destinos);
           setFecha_salida(new Date(packageData.fecha_salida).toLocaleDateString());

@@ -187,3 +187,10 @@
 .MoverP{
   margin-left: 0.5rem; 
 }
+.Map{
+  gap: 0.7rem;
+}
+.calendar{
+  margin-left: 1.3em;
+  gap: 0.8rem;
+}

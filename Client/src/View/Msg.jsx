@@ -4,24 +4,39 @@ import chat from '../assets/Icons/chat.png';
 import factura from '../assets/Icons/factura.png';
 import mapa from '../assets/Icons/mapa.png';
 import paquete from '../assets/Icons/paquetes.png';
-import { Link, Outlet, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { Link, Outlet,useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { Icons } from '../Components/Icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { Navbar } from '../Components/Navbar';
 export const Msg = () => {
-    const { state } = useLocation();
-    let content = [{ nombre: 'Usuario' }]; // Valor predeterminado
-
-    if (state && state.response && state.response.content) {
-        content = state.response.content;
-    }
+    let location = useLocation();
+    const dato = location.state?.email || '';
 
     const [packageT, setPackage] = useState(false)
     const [itinerary, setItinerary] = useState(false)
     const [bill, setBill] = useState(false)
     const [booking, setBooking] = useState(false);
-    const [visible, setVisible] = useState(false)
+    const [visible, setVisible] = useState(false);
+    const [loggue, setLoggue] = useState(dato);
+    const [content, setContent] = useState(null);
+
+
+    useEffect(() => {
+        if (loggue) {
+            setLoggue(loggue)
+            const storedData = localStorage.getItem(loggue);
+            if (storedData) {
+                setContent(JSON.parse(storedData));
+            }
+        }
+    }, [loggue]);
+
+    console.log(loggue);
+
+    if (!content) {
+        return <div>Loading...</div>;
+    }
     return <>
         <header className='Header rounded-b-2xl flex justify-between'>
             <button className='xl:hidden' onClick={() => {
@@ -32,7 +47,7 @@ export const Msg = () => {
             <img src={MSG} alt="No found" className='hidden xl:block xl:w-20 mx-5' />
             <nav className='flex gap-x-16 items-center'>
                 <ul className='hidden xl:flex h-12 border-l border-r border-gray-400  gap-x-16 p-2'>
-                    <li ><Link ><img src={reserva} alt="no found" className='w-8 h-8' /></Link></li>
+                    <li ><Link to = "Reservas" ><img src={reserva} alt="no found" className='w-8 h-8' /></Link></li>
                     <li><Link to = 'chat'><img src={chat} alt="No foun" className='w-8' /></Link></li>
                     <li><Link><img src={factura} alt="No foun" className='w-10' /></Link></li>
                     <li><Link to="Itinerario"><img src={mapa} alt="No foun" className='w-8 h-8' /></Link></li>
@@ -41,7 +56,7 @@ export const Msg = () => {
                 <ul className='mr-5'>
 
                     <li className='w-8 h-8 xl:w-10 xl:h-10 rounded-full flex justify-center items-center font-bold xl:text-2xl bg-green-300 '>
-                        {content[0].nombre.charAt(0)}
+                        {content.nombre.charAt(0)}
                     </li>
                 </ul>
             </nav>
@@ -90,7 +105,7 @@ export const Msg = () => {
                     </li>
                 </ul>
             </nav>
-            <h1 className='name hidden xl:flex absolute xl:font-bold xl:text-2xl xl:mx-72 bg-white p-2 xl:my-2 rounded-2xl'>Hola de nuevo, {content[0].nombre}</h1>
+            <h1 className='name hidden xl:flex absolute xl:font-bold xl:text-2xl xl:mx-72 bg-white p-2 xl:my-2 rounded-2xl'>Hola de nuevo, {content.nombre}</h1>
             <article className='Message SubMain bg-white xl:my-20 xl:col-span-8 rounded-2xl flex flex-row xl:overflow-y-auto flex-wrap xl:mr-5 justify-center items-center'>
                 <Outlet />
             </article>

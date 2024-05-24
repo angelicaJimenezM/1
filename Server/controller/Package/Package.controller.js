@@ -2,7 +2,8 @@ import { PaqueteTuristico } from "../../models/PaqueteTuristicos/PaqueteTuristic
 import { PaqueteTuristicoRepository } from "../../models/PaqueteTuristicos/PaqueteTuristicoRepository.js";
 
 const paqueteturisticos = new PaqueteTuristicoRepository();
-export const createPackage = async (req, res) => {
+
+  export const createPackage = async (req, res) => {
   const {
     nombre,
     destinos,
@@ -32,7 +33,7 @@ export const createPackage = async (req, res) => {
   
 };
 
-export const showPackage = async (req, res) => {
+  export const showPackage = async (req, res) => {
   try {
     const showPackage = await paqueteturisticos.showPackage();
     res.json(showPackage);

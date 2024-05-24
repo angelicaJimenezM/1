@@ -12,8 +12,14 @@ import { handleChangeText, handleChangenumber } from '../Utils/InputValidation'
 import { createTouristRequest } from '../api/user.api.js'
 //-----------------------------------------------------------
 import { Button } from "../Components/Button";
-import {Successful} from '../Utils/Alerts.js'
+import { Successful, Errors } from '../Utils/Alerts.js';
+import { useLocation } from 'react-router-dom';
+
 export const Tourist = () => {
+    const location = useLocation();
+    const { state } = location
+    const { passw, usuario } = state
+    console.log(state.email, passw, usuario)
     //Almacenamos el valor del input en el estado utilizando el hook useState
     const [nombre, setNombre] = useState('');
     const [apellido, setApellido] = useState('');
@@ -27,7 +33,6 @@ export const Tourist = () => {
     const [nivel, setNivel] = useState('')
     const handleSubmit = async (e) => {
         e.preventDefault();
-        Successful();
         try {
             const response = await createTouristRequest({
                 nombre: nombre,
@@ -39,11 +44,22 @@ export const Tourist = () => {
                 n_telefono: telefono,
                 c_emergencia: contacto,
                 n_idiomas: idiomas,
-                idiomas: nivel
+                idiomas: nivel,
+                email: state.email,
+                passw,
+                tipo_usuario: usuario,
             })
-            console.log(response.data)
+            if (response.status === 200) {
+
+                Successful(response.data.Message)
+            }
+
         } catch (error) {
-            console.error('Error al registrar usuario:', error)
+            // El servidor respondió con un código de estado fuera del rango 200
+            if (error.response.status === 400) {
+                Errors(`${error.response.data.Message} : ${error.response.data.errores}`);
+            }
+
         }
     }
     return (

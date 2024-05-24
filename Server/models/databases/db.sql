@@ -41,3 +41,11 @@ CREATE TABLE tipos_cuenta (
     id INT AUTO_INCREMENT PRIMARY KEY,
     tipo VARCHAR(255) NOT NULL
 );
+
+CREATE TABLE `Turistas_Itinerarios` (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    turista_id INT,
+    itinerario_id INT,
+    FOREIGN KEY (turista_id) REFERENCES turista(nit),
+    FOREIGN KEY (itinerario_id) REFERENCES itinerarios(nit)
+);
